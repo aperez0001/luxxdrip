@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 // Need to create and add the images to the assets folder
 
 import comingSoon from "@/assets/comingSoon.png"
-// import HomePageText from "@/assets/HomePageText.png"
+import HomePageText from "@/assets/HomePageText.png"
 // import HomePageGraphic from "@/assets/HomePageGraphic.png"
 // import SponsorRedBull from "@/assets/SponsorRedBull.png"
 // import SponsorForbes from "@/assets/SponsorForbes.png"
@@ -45,11 +45,11 @@ const ComingSoon = ({ setSelectedPage }: Props) => {
                 }}
             >
 
-                <div className="relative">
-                    <div className="before:absolute before:-top-20">
-                        <p className="text-5xl">Coming Soon!</p>
+                    <div className="relative">
+                        <div className="before:absolute before:-top-20">
+                            <img className="w-96" alt="home-page-text" src={HomePageText} />
+                        </div>
                     </div>
-                </div>
                 
                 <p className="mt-8 text-sm">
                     Our IV Hydration therapies deliver the highest quality vitamins and hydration directly to your bloodstream, circumventing the gut, to completely absorb essential nutrients.
