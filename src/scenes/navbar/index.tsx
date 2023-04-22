@@ -54,8 +54,14 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             />
                         </div>
                         <div className={`${flexBetween} gap-8`}>
-                            <p>Sign In</p>
-                            <ActionButton setSelectedPage={setSelectedPage} >Book Now</ActionButton>
+                            {/* <p>Sign In</p> */}
+                            {/* <ActionButton setSelectedPage={setSelectedPage} >Book Now</ActionButton> */}
+                            {/* CHANGE ONE BOOKING WIDGET IS EMBEDDED INTO THE SITE */}
+                            <div>
+                                <a href="https://intakeq.com/booking/tuggnu" target="_blank" rel="noopener noreferrer">
+                                    <button className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white'>Book Now</button>
+                                </a>
+                            </div>
                         </div>
                     </div> 
                     ) : (

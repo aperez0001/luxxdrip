@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 
 // Need to create and add the images to the assets folder
 
+import comingSoon from "@/assets/comingSoon.png"
 // import HomePageText from "@/assets/HomePageText.png"
 // import HomePageGraphic from "@/assets/HomePageGraphic.png"
 // import SponsorRedBull from "@/assets/SponsorRedBull.png"
@@ -33,7 +34,7 @@ const ComingSoon = ({ setSelectedPage }: Props) => {
         <div className="z-10 mt-32 md:basis-3/5">
             {/* HEADINGS */}
             <motion.div 
-                className="md:-mt-20"
+                className=""
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
@@ -67,18 +68,20 @@ const ComingSoon = ({ setSelectedPage }: Props) => {
                     visible: { opacity: 1, x: 0 }
                 }}
             >
-                <ActionButton setSelectedPage={setSelectedPage}>
-                    Book Now
-                </ActionButton>
+                <div>
+                    <a href="https://intakeq.com/booking/tuggnu" target="_blank" rel="noopener noreferrer">
+                        <button className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white'>Book Now</button>
+                    </a>
+                </div>
             </motion.div>
 
         </div>
 
         {/* IMAGE */}
         <div
-            className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end"
+            className="flex basis-3/5 justify-center md:z-10 mt-20 md:ml-40 md:mt-20 md:justify-items-end"
         >
-            <img alt="home-pageGrapic"/>
+            <img alt="coming-soon" src={comingSoon}/>
 
         </div>
     </motion.div>
