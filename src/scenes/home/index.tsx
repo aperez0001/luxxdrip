@@ -1,14 +1,14 @@
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { SelectedPage } from "@/shared/types"
-import ActionButton from "@/shared/ActionButton"
+import ActionButtonExternal from "@/shared/ActionButtonExternal"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import { motion } from "framer-motion"
 
 
 // Need to create and add the images to the assets folder
 
-import HomePageText from "@/assets/HomePageText.png"
-// import HomePageGraphic from "@/assets/HomePageGraphic.png"
+import HomePage from "@/assets/HeroText.png"
+import HomePageGraphic from "@/assets/HomePageImage.png"
 
 
 
@@ -18,23 +18,25 @@ type Props = {
 }
 
 const Home = ({ setSelectedPage }: Props) => {
-    const isAboveMediumScreens = useMediaQuery("(min-width:1060px)")
+const isAboveMediumScreens = useMediaQuery("(min-width:1060px)")
+
+const flexBetween = "flex items-center justify-between"
 
   return (
     <section
         id="home"
-        className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0"
+        className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center bg-fixed py-10 h-full"
     >
         {/* IMAGE AND MAIN HEADER */}
         <motion.div 
-            className="md:flex mx-auto w-5/6 items-center justify-center"
+            className="flex mx-10 items-center justify-center"
             onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
             {/* MAIN HEADER */}
-            <div className="z-10 mt-32 md:basis-3/5">
+            <div className="z-10 mt-32 ">
                 {/* HEADINGS */}
                 <motion.div 
-                    className="md:-mt-20"
+                    className=""
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
@@ -45,20 +47,19 @@ const Home = ({ setSelectedPage }: Props) => {
                     }}
                 >
 
-                    <div className="relative">
+                    <div className="">
                         <div className="before:absolute before:-top-20">
-                            <img className="w-96" alt="home-page-text" src={HomePageText} />
+                            <img className="" alt="home-page-text" src={HomePage} />
                         </div>
                     </div>
                     
-                    <p className="mt-8 text-sm">
-                        Our IV Hydration therapies deliver the highest quality vitamins and hydration directly to your bloodstream, circumventing the gut, to completely absorb essential nutrients.
-                    </p>
+
+                    
                 </motion.div>
 
                 {/* ACTIONS */}
                 <motion.div 
-                    className="mt-8 flex items-center"
+                    className="mt-8 flex items-center flex-wrap md-max:justify-center max-w-[920px]"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
@@ -68,20 +69,20 @@ const Home = ({ setSelectedPage }: Props) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <ActionButton setSelectedPage={setSelectedPage}>
-                        Book Now
-                    </ActionButton>
+                    <div className="">
+                        <p className="text-lg md-max:text-base md-max:text-center text-white">
+                        Luxx Drip Therapy offers a premier IV therapy experience designed to enhance your well-being and elevate your health. Our expertly formulated IV treatments are meticulously crafted to provide targeted nutrients, hydration, and rejuvenation, allowing you to optimize your wellness from the inside out.
+                        </p> 
+                    </div>
+                    <div className="mt-8">
+                        <ActionButtonExternal>
+                                Book Now
+                        </ActionButtonExternal>
+                    </div>
                 </motion.div>
 
             </div>
 
-            {/* IMAGE */}
-            <div
-                className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end"
-            >
-                <img alt="home-pageGrapic"/>
-
-            </div>
         </motion.div>
     </section>
   )

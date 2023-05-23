@@ -32,8 +32,8 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       
-      {/* <Home setSelectedPage = {setSelectedPage} /> */}
-      <ComingSoon setSelectedPage = {setSelectedPage} />
+      <Home setSelectedPage = {setSelectedPage} />
+      {/* <ComingSoon setSelectedPage = {setSelectedPage} /> */}
     </div>
   )
 }
