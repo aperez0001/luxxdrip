@@ -70,7 +70,7 @@ const flexBetween = "flex items-center justify-between"
                     }}
                 >
                     <div className="">
-                        <p className="text-lg md-max:text-base md-max:text-center text-white">
+                        <p className="text-lg md-max:px-8 md-max:text-base md-max:text-center text-white">
                         Luxx Drip Therapy offers a premier IV therapy experience designed to enhance your well-being and elevate your health. Our expertly formulated IV treatments are meticulously crafted to provide targeted nutrients, hydration, and rejuvenation, allowing you to optimize your wellness from the inside out.
                         </p> 
                     </div>
