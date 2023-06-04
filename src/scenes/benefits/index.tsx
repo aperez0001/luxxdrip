@@ -102,7 +102,7 @@ const Benefits = ({setSelectedPage}: Props) => {
                 className="mt-5 md:grid grid-cols-2 justify-center gap-4"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 variants={container}
             >
                 {benefits.map((benefit: BenefitType) => (

@@ -9,10 +9,10 @@ type Props = {
 
 const Product = ({ name, description, image }: Props) => {
     
-    const overlayStyles = `p-5 absolute z-30 flex h-[450px] w-[300px] flex-col items-center justify-center whitespace-normal bg-secondary-300 text-center text-black opacity-0 transition duration-500 hover:opacity-90`
+    const overlayStyles = `p-5 absolute z-30 flex h-[420px] w-[300px] flex-col items-center justify-center whitespace-normal bg-secondary-300 text-center text-black opacity-0 transition duration-500 hover:opacity-90`
   
     return (
-    <li className="relative mx-5 inline-block h-[380px] w-[300px]">
+    <li className="relative mx-5 inline-block h-[380px] w-[300px] mb-20">
         <div className={overlayStyles}>
             <p className="text-2xl">{name}</p>
             <p className="mt-5">{description}</p>
