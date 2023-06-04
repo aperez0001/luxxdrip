@@ -1,8 +1,16 @@
 import Navbar from "@/scenes/navbar"
 import Home from "@/scenes/home"
+import Benefits from "@/scenes/benefits"
+import OurProducts from "@/scenes/ourProducts"
+import ContactUs from "@/scenes/contactUs"
+
+import Featured from "@/scenes/featured"
 import { useEffect, useState } from "react"
 import { SelectedPage } from "@/shared/types"
 import ComingSoon from "./scenes/temp"
+import Footer from "@/scenes/footer"
+
+
 
 
 function App() {
@@ -33,6 +41,11 @@ function App() {
       />
       
       <Home setSelectedPage = {setSelectedPage} />
+      <Benefits setSelectedPage = {setSelectedPage} />
+      <OurProducts setSelectedPage = {setSelectedPage} />
+      <ContactUs setSelectedPage = {setSelectedPage} />
+      {/* <Footer /> */}
+      
       {/* <ComingSoon setSelectedPage = {setSelectedPage} /> */}
     </div>
   )

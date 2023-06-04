@@ -25,7 +25,7 @@ const flexBetween = "flex items-center justify-between"
   return (
     <section
         id="home"
-        className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center bg-fixed py-10 h-full"
+        className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center block py-10 h-full"
     >
         {/* IMAGE AND MAIN HEADER */}
         <motion.div 
@@ -33,22 +33,22 @@ const flexBetween = "flex items-center justify-between"
             onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
             {/* MAIN HEADER */}
-            <div className="z-10 mt-32 ">
+            <div className="mt-32">
                 {/* HEADINGS */}
                 <motion.div 
                     className=""
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ delay:0.2, duration: 0.5 }}
                     variants={{
                         hidden: { opacity: 0, x:-50},
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
 
-                    <div className="">
-                        <div className="before:absolute before:-top-20">
+                    <div className="mx-auto">
+                        <div className="">
                             <img className="" alt="home-page-text" src={HomePage} />
                         </div>
                     </div>

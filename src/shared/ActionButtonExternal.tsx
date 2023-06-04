@@ -6,7 +6,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const ActionButton = ({ children }: Props) => {
+const ActionButtonExternal = ({ children }: Props) => {
   return (
     
     <a href="https://luxxdrip.intakeq.com/booking" target='_blank'>
@@ -19,4 +19,4 @@ const ActionButton = ({ children }: Props) => {
   )
 }
 
-export default ActionButton
+export default ActionButtonExternal
