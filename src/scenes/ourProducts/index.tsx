@@ -83,7 +83,7 @@ const OurProducts = ({ setSelectedPage }: Props) => {
                 </div>
             ) : (
                 < div 
-                className="mt-5 grid grid-cols-2 items-center justify-center"
+                className="flex flex-wrap mt-5 md:grid grid-cols-2 items-center justify-center gap-4"
                 >
                 {products.map((item: ProductType, index) => (
                     <Product
