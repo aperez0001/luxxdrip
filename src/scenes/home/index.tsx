@@ -21,7 +21,7 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
 
     const isAboveMediumScreens = useMediaQuery("(min-width:1060px)")
-    const isAboveHeight = useMediaQuery("(min-height:860px)")
+    const isAboveHeight = useMediaQuery("(min-height:450px)")
 
 
     const flexBetween = "flex items-center justify-between"
@@ -102,7 +102,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
             >
                 {/* MAIN HEADER */}
-                <div className="mt-20">
+                <div className="mt-16">
                     {/* HEADINGS */}
                     <motion.div 
                         className=""
@@ -118,10 +118,10 @@ const Home = ({ setSelectedPage }: Props) => {
 
                         <div className="">
                             <div className="">
-                                <img className="max-w-[20vw] min-w-[150px] mx-auto" alt="home-page-text" src={HomePageSm} />
+                                <img className="max-w-[18vw] min-w-[150px] mx-auto" alt="home-page-text" src={HomePageSm} />
                             </div>
                         </div>
-                        <p className="text-white text-center max-w-[770px] mt-8">
+                        <p className="text-white text-center max-w-[770px] mt-6">
                             Luxx Drip Therapy offers a premier IV therapy experience designed to enhance your well-being and elevate your health. Our expertly formulated IV treatments are meticulously crafted to provide targeted nutrients, hydration, and rejuvenation, allowing you to optimize your wellness from the inside out.
                         </p>
                         {/* <p className="text-md md-max:px-8 md-max:text-base md-max:text-center text-white">
@@ -132,7 +132,7 @@ const Home = ({ setSelectedPage }: Props) => {
 
                     {/* ACTIONS */}
                     <motion.div 
-                        className="mt-8 flex items-center flex-wrap justify-center max-w-[920px]"
+                        className="mt-6 flex items-center flex-wrap justify-center max-w-[920px]"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}
