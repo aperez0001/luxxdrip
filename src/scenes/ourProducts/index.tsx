@@ -77,6 +77,7 @@ const OurProducts = ({ setSelectedPage }: Props) => {
                                 name={item.name}
                                 description={item.description}
                                 image={item.image}
+                                overlay={true}
                             />
                         ))}
                     </ul>
@@ -85,15 +86,16 @@ const OurProducts = ({ setSelectedPage }: Props) => {
                 < div 
                 className="flex flex-wrap mt-5 md:grid grid-cols-2 items-center justify-center gap-4"
                 >
-                {products.map((item: ProductType, index) => (
-                    <Product
-                        key={`${item.name}-${index}`}
-                        name={item.name}
-                        description={item.description}
-                        image={item.image}
-                    />
-                ))}
-            </div>
+                    {products.map((item: ProductType, index) => (
+                        <Product
+                            key={`${item.name}-${index}`}
+                            name={item.name}
+                            description={item.description}
+                            image={item.image}
+                            overlay={false}
+                        />
+                    ))}
+                </div>
             )}
 
         </motion.div>
