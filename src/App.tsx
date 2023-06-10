@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 import { SelectedPage } from "@/shared/types"
 import ComingSoon from "./scenes/temp"
 import Footer from "@/scenes/footer"
+import MailChimp from "./shared/MailChimp"
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="app bg-gray-20">
+      <MailChimp />
       <Navbar 
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage} 
