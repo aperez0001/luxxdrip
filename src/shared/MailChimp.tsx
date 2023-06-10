@@ -10,6 +10,7 @@ const MailChimp: React.FC  = () => {
         script.async = true;
         script.src =
           'https://chimpstatic.com/mcjs-connected/js/users/e01919a7baafa2016354fe5f6/2069cd9a2aa0b8c007a9ee66b.js';
+          
         const firstScript = document.getElementsByTagName('script')[0];
         if (firstScript.parentNode) {
           firstScript.parentNode.insertBefore(script, firstScript);
@@ -24,12 +25,7 @@ const MailChimp: React.FC  = () => {
   
     return (
     
-        <div
-            id="intakeq"
-            className='max-w-[720px] w-full'
-        > 
-        
-        </div>
+        null
   )
 }
 

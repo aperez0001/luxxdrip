@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="app bg-gray-20">
-      <MailChimp />
+      {/* <MailChimp /> */}
       <Navbar 
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage} 
