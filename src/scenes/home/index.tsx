@@ -31,7 +31,7 @@ const Home = ({ setSelectedPage }: Props) => {
     {isAboveHeight ? (
         <section
             id="home"
-            className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center block py-10 h-full"
+            className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center block py-10 min-h-full"
         >
             {/* IMAGE AND MAIN HEADER */}
             <motion.div 
@@ -94,7 +94,7 @@ const Home = ({ setSelectedPage }: Props) => {
     ) : (
         <section
             id="home"
-            className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center block py-10 h-full"
+            className="gap-16 bg-main-hero bg-no-repeat bg-cover bg-center block py-10 min-h-full"
         >
             {/* IMAGE AND MAIN HEADER */}
             <motion.div 
