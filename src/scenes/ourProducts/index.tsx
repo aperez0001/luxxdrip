@@ -62,9 +62,14 @@ const OurProducts = ({ setSelectedPage }: Props) => {
                 
                     <HText>Our Products</HText>
                     <p className='py-5'>
-                        Experience the transformative power of our IV therapy products. From hydration boosters to immune defense, energy revitalization to performance recovery, and beauty and wellness treatments, our range of carefully crafted infusions is designed to optimize your health and well-being. With personalized blends and a focus on safety and efficacy, our IV therapy products deliver immediate and lasting results. Discover the ultimate wellness solution and unlock your full potential with our exceptional line of IV therapy treatments.
-                    </p>
-                
+                            Experience the transformative power of our IV therapy products. From hydration boosters to immune defense, energy revitalization to performance recovery, and beauty and wellness treatments, our range of carefully crafted infusions is designed to optimize your health and well-being. With personalized blends and a focus on safety and efficacy, our IV therapy products deliver immediate and lasting results. Discover the ultimate wellness solution and unlock your full potential with our exceptional line of IV therapy treatments.
+                        </p>
+                    <div className='relative mt-20 flex-cols items-center'>
+                        <p className='mx-auto text-center text-3xl'>Featured Items
+                        
+                        </p>
+                        <hr className="w-48 h-1 my-4 mx-auto bg-black border-0 rounded  dark:bg-gray-700"/>
+                    </div>
             </motion.div>
 
             {/* PRODUCTS SCROLLER */}
