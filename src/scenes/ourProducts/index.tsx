@@ -13,22 +13,22 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 const products: Array<ProductType> = [
     {
         name: "Basic Blend",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dicta rem provident nemo cumque libero! Accusamus, in. Eaque architecto laborum temporibus culpa ea nulla sed veritatis quasi aliquid, labore repellat!",
+        description: "Includes a classic combination of IV fluids, vitamins, electrolytes, and antioxidants that may help improve a wide range of conditions.",
         image: basic
     },
     {
         name: "Energy Boost",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dicta rem provident nemo cumque libero! Accusamus, in. Eaque architecto laborum temporibus culpa ea nulla sed veritatis quasi aliquid, labore repellat!",
+        description: "Includes a classic combination of IV fluids, vitamins, electrolytes, and antioxidants that may help improve a wide range of conditions.",
         image: energy
     },
     {
         name: "Immunity Boost",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dicta rem provident nemo cumque libero! Accusamus, in. Eaque architecto laborum temporibus culpa ea nulla sed veritatis quasi aliquid, labore repellat!",
+        description: "Includes a blend of IV fluids, vitamins, and antioxidants that can help cleanse your body and supercharge your immune system to fight off illness.",
         image: immune
     },
     {
         name: "Performance Blend",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dicta rem provident nemo cumque libero! Accusamus, in. Eaque architecto laborum temporibus culpa ea nulla sed veritatis quasi aliquid, labore repellat!",
+        description: "Recover from workouts and illness quickly with an IV that can help boost immune function, reduce inflammation, and support faster muscle healing.",
         image: performance
     },
 ]
