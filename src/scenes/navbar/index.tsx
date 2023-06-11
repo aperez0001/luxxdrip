@@ -4,6 +4,7 @@ import Logo from "@/assets/logo.svg"
 import Link from "./Link"
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import ActionButton from "@/shared/ActionButton";
 
 type Props = {
@@ -17,7 +18,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
     const flexBetween = "flex items-center justify-between"
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
-    const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow"
+    const navbarBackground = isTopOfPage ? "" : "bg-black/90 drop-shadow"
 
   return (
     <nav>
@@ -26,8 +27,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 
                 <div className={`${flexBetween} w-full gap-16`}>
                     {/* Left Side */}
-                    <img alt="logo" src={Logo} className={'w-20'}/>
-
+                    <AnchorLink href='#home'>
+                        <img alt="logo" src={Logo} className={'w-20'}/>
+                    </AnchorLink>
                     {/* Right Side */}
                     {isAboveMediumScreens ? (
                     <div className={`${flexBetween} w-full`}>
