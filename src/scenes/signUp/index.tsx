@@ -1,6 +1,7 @@
 import HText from '@/shared/HText'
 import { SelectedPage } from '@/shared/types'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 
@@ -26,6 +27,22 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
             e.preventDefault()
         }
     }
+
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+
+    const handleFirstNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFirstName(event.target.value);
+    };
+
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLastName(event.target.value);
+  };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
 
     return (
     <section
@@ -102,47 +119,70 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                         `}</style>
                         <div id="mc_embed_signup">
                             <form
-                            action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
-                            method="post"
-                            id="mc-embedded-subscribe-form"
-                            name="mc-embedded-subscribe-form"
-                            className="validate"
-                            target="_blank"
+                                action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
+                                method="post"
+                                id="mc-embedded-subscribe-form"
+                                name="mc-embedded-subscribe-form"
+                                className="validate"
+                                target="_blank"
                             >
-                            <div id="mc_embed_signup_scroll">
-                                
-                                <div className="indicates-required">
-                                <span className="asterisk">*</span> indicates required
+                                <div id="mc_embed_signup_scroll">
+                                    
+                                    <div className="indicates-required">
+                                        <span className="asterisk">*</span> indicates required
+                                    </div>
+                                    <div className="mc-field-group">
+                                        <label htmlFor="mce-FNAME">
+                                            First Name <span className="asterisk">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            name="FNAME" 
+                                            className="required text" 
+                                            id="mce-FNAME" 
+                                            value={firstName} 
+                                            onChange={handleFirstNameChange}
+                                            required 
+                                        />
+                                    </div>
+                                    <div className="mc-field-group">
+                                        <label htmlFor="mce-LNAME">
+                                            Last Name <span className="asterisk">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            name="LNAME" 
+                                            className="required text" 
+                                            id="mce-LNAME" 
+                                            value={lastName}
+                                            onChange={handleLastNameChange}
+                                            required 
+                                        />
+                                    </div>
+                                    <div className="mc-field-group">
+                                        <label htmlFor="mce-EMAIL">
+                                            Email Address <span className="asterisk">*</span>
+                                        </label>
+                                        <input 
+                                            type="email" 
+                                            name="EMAIL" 
+                                            className="required email" 
+                                            id="mce-EMAIL" 
+                                            value={email} 
+                                            onChange={handleEmailChange}
+                                            required />
+                                    </div>
+                                    <div id="mce-responses" className="clearfalse">
+                                        <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
+                                        <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
+                                    </div>
+                                    <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+                                        <input type="text" name="b_e01919a7baafa2016354fe5f6_44d003f703" tabIndex={-1} value="" />
+                                    </div>
+                                    <div className="clear">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" />
+                                    </div>
                                 </div>
-                                <div className="mc-field-group">
-                                <label htmlFor="mce-FNAME">
-                                    First Name <span className="asterisk">*</span>
-                                </label>
-                                <input type="text" name="FNAME" className="required text" id="mce-FNAME" value="" required />
-                                </div>
-                                <div className="mc-field-group">
-                                <label htmlFor="mce-LNAME">
-                                    Last Name <span className="asterisk">*</span>
-                                </label>
-                                <input type="text" name="LNAME" className="required text" id="mce-LNAME" value="" required />
-                                </div>
-                                <div className="mc-field-group">
-                                <label htmlFor="mce-EMAIL">
-                                    Email Address <span className="asterisk">*</span>
-                                </label>
-                                <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" value="" required />
-                                </div>
-                                <div id="mce-responses" className="clearfalse">
-                                <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
-                                <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
-                                </div>
-                                <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                                <input type="text" name="b_e01919a7baafa2016354fe5f6_44d003f703" tabIndex={-1} value="" />
-                                </div>
-                                <div className="clear">
-                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" />
-                                </div>
-                            </div>
                             </form>
                         </div>
                         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
@@ -152,7 +192,7 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                             __html: `(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='merge';fnames[2]='LNAME';ftypes[2]='merge';fnames[0]='EMAIL';ftypes[0]='merge';fnames[3]='ADDRESS';ftypes[3]='merge';fnames[4]='PHONE';ftypes[4]='merge';fnames[5]='BIRTHDAY';ftypes[5]='merge';fnames[6]='REFERRAL';ftypes[6]='merge';false}(jQuery));var $mcj = jQuery.noConflict(true);`,
                             }}
                         />
-    </div>
+                    </div>
                 </motion.div>
             </div>
         </motion.div>
