@@ -3,6 +3,7 @@ import Home from "@/scenes/home"
 import Benefits from "@/scenes/benefits"
 import OurProducts from "@/scenes/ourProducts"
 import ContactUs from "@/scenes/contactUs"
+import MailchimpForm from "./scenes/signUp"
 
 import Featured from "@/scenes/featured"
 import { useEffect, useState } from "react"
@@ -45,7 +46,7 @@ function App() {
       <Home setSelectedPage = {setSelectedPage} />
       <Benefits setSelectedPage = {setSelectedPage} />
       <OurProducts setSelectedPage = {setSelectedPage} />
-      <ContactUs setSelectedPage = {setSelectedPage} />
+      <MailchimpForm setSelectedPage = {setSelectedPage} />
       <Footer />
       
       {/* <ComingSoon setSelectedPage = {setSelectedPage} /> */}
