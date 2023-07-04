@@ -1,3 +1,4 @@
+import useMediaQuery from '@/hooks/useMediaQuery'
 import HText from '@/shared/HText'
 import { SelectedPage } from '@/shared/types'
 import { motion } from 'framer-motion'
@@ -11,6 +12,8 @@ type Props = {
 
 const MailchimpForm = ({ setSelectedPage }: Props) => {
   
+    const isAboveMediumScreens = useMediaQuery("(min-width:1060px)")
+
     const inputStyles = `mt-10 w-full rounded-lg bg-secondary-500 px-5 py-3 placeholder-black` 
 
     const {
@@ -71,8 +74,10 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                 Join Our Email List Now for Exclusive Benefits and Wellness Insights!
 
                 Ready to embark on a journey towards enhanced well-being? Join our email list today and gain access to exclusive benefits, special promotions, and valuable insights to support your wellness goals.
-
-                By becoming a part of our email community, you'll receive:
+                </p>
+                
+                {isAboveMediumScreens ? (
+                <p>By becoming a part of our email community, you'll receive: 
                 <ul className='py-5 space-y-1 list-inside'>
                 <li className="flex items-start">
                     <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -91,10 +96,15 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                     Events and News: Stay in the loop with Luxx Drip Therapy events, workshops, and community initiatives. Be the first to hear about new treatment offerings, additions to our team, and other exciting updates happening in our luxurious wellness space.
                 </li>
                 </ul>
-                Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.
+                    Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.
+                </p>
+                ) : (
+                    <p>Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.</p>
+                )}
+                
 
     
-                </p>
+                
             </motion.div>
 
             {/* FORM */}
