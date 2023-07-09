@@ -120,89 +120,91 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <div id="mc_embed_shell">
-                        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css" />
-                        <style>{`
-                            #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-                            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                        `}</style>
-                        <div id="mc_embed_signup">
-                            <form
+                    
+                    <form
                                 action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
                                 method="post"
-                                id="mc-embedded-subscribe-form"
-                                name="mc-embedded-subscribe-form"
-                                className="validate"
                                 target="_blank"
-                            >
-                                <div id="mc_embed_signup_scroll">
-                                    
-                                    <div className="indicates-required">
-                                        <span className="asterisk">*</span> indicates required
-                                    </div>
-                                    <div className="mc-field-group">
-                                        <label htmlFor="mce-FNAME">
-                                            First Name <span className="asterisk">*</span>
-                                        </label>
-                                        <input 
-                                            type="text" 
-                                            name="FNAME" 
-                                            className="required text" 
-                                            id="mce-FNAME" 
-                                            value={firstName} 
-                                            onChange={handleFirstNameChange}
-                                            required 
-                                        />
-                                    </div>
-                                    <div className="mc-field-group">
-                                        <label htmlFor="mce-LNAME">
-                                            Last Name <span className="asterisk">*</span>
-                                        </label>
-                                        <input 
-                                            type="text" 
-                                            name="LNAME" 
-                                            className="required text" 
-                                            id="mce-LNAME" 
-                                            value={lastName}
-                                            onChange={handleLastNameChange}
-                                            required 
-                                        />
-                                    </div>
-                                    <div className="mc-field-group">
-                                        <label htmlFor="mce-EMAIL">
-                                            Email Address <span className="asterisk">*</span>
-                                        </label>
-                                        <input 
-                                            type="email" 
-                                            name="EMAIL" 
-                                            className="required email" 
-                                            id="mce-EMAIL" 
-                                            value={email} 
-                                            onChange={handleEmailChange}
-                                            required />
-                                    </div>
-                                    <div id="mce-responses" className="clearfalse">
-                                        <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
-                                        <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
-                                    </div>
-                                    <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                                        <input type="text" name="b_e01919a7baafa2016354fe5f6_44d003f703" tabIndex={-1} value="" />
-                                    </div>
-                                    <div className="clear">
-                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-                        <script
-                            type="text/javascript"
-                            dangerouslySetInnerHTML={{
-                            __html: `(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='merge';fnames[2]='LNAME';ftypes[2]='merge';fnames[0]='EMAIL';ftypes[0]='merge';fnames[3]='ADDRESS';ftypes[3]='merge';fnames[4]='PHONE';ftypes[4]='merge';fnames[5]='BIRTHDAY';ftypes[5]='merge';fnames[6]='REFERRAL';ftypes[6]='merge';false}(jQuery));var $mcj = jQuery.noConflict(true);`,
-                            }}
+                                // might need onSubmit here
+                    >
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="FNAME"
+                            id="mce-FNAME"
+                            placeholder='First Name'
+                            value={firstName} 
+                            onChange={handleFirstNameChange}
+                            required
+                            // {...register("firstName", {
+                            //     required: true,
+                            //     maxLength: 100,
+                            // })}
                         />
-                    </div>
+                        
+                        {errors.firstName && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.firstName.type === "required" && "This field is required."}
+                                {errors.firstName.type === "maxLength" && "Max length is 100 characters."}
+                            </p>
+                        )}
+
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="LNAME"
+                            id="mce-LNAME"
+                            placeholder='Last Name'
+                            value={lastName}
+                            onChange={handleLastNameChange}
+                            required
+                            // {...register("lastName", {
+                            //     required: true,
+                            //     maxLength: 100,
+                            // })}
+                        />
+                        
+                        {errors.lastName && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.lastName.type === "required" && "This field is required."}
+                                {errors.lastName.type === "maxLength" && "Max length is 100 characters."}
+                            </p>
+                        )}
+
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="EMAIL"
+                            id="mce-EMAIL"
+                            placeholder='EMAIL'
+                            value={email} 
+                            onChange={handleEmailChange}
+                            required
+                            // {...register("email", {
+                            //     required: true,
+                            //     pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                            // })}
+                        />
+                        {errors.email && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.email.type === "required" && "This field is required."}
+                                {errors.email.type === "pattern" && "Invalid email address."}
+                            </p>
+                        )}
+
+                        <button
+                            type="submit"
+                            name='subscribe'
+                            value="Subscribe"
+                            className='mt-5 rounded-md bg-secondary-300 px-10 py-2 hover:bg-primary-500 hover:text-white'
+                        >
+                            SUBMIT
+                        </button>
+
+
+                    </form>
+                    
+                    
                 </motion.div>
             </div>
         </motion.div>
