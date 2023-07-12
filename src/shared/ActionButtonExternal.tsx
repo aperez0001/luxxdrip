@@ -11,7 +11,7 @@ const ActionButtonExternal = ({ children }: Props) => {
     
     <a href="https://luxxdrip.intakeq.com/booking" target='_blank'>
       <button
-          className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white'
+          className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-secondary-600'
       >
           {children}
       </button>

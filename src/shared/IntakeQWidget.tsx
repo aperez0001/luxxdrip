@@ -23,7 +23,7 @@ const IntakeQWidget: React.FC  = () => {
     
         <div
             id="intakeq"
-            className='max-w-[720px] w-full'
+            className='max-w-[720px] w-full mx-auto'
         > 
         
         </div>

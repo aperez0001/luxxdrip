@@ -7,6 +7,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import ActionButton from "@/shared/ActionButton";
 
+
 type Props = {
     isTopOfPage: boolean;
     selectedPage: SelectedPage;
@@ -19,6 +20,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
     const navbarBackground = isTopOfPage ? "" : "bg-black/90 drop-shadow"
+    
 
   return (
     <nav>
@@ -54,6 +56,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                 selectedPage={selectedPage} 
                                 setSelectedPage={setSelectedPage} 
                             />
+                            
                         </div>
                         <div className={`${flexBetween} gap-8`}>
                             {/* <p>Sign In</p> */}
@@ -61,7 +64,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             {/* CHANGE ONE BOOKING WIDGET IS EMBEDDED INTO THE SITE */}
                             <div>
                                 <a href="https://luxxdrip.intakeq.com/booking" target="_blank" rel="noopener noreferrer">
-                                    <button className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white'>Book Now</button>
+                                    <button className='rounded-md bg-secondary-500 px-10 py-2 hover:bg-secondary-600'>Book Now</button>
                                 </a>
                             </div>
                         </div>
@@ -80,11 +83,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
         {/* Mobile Menu Modal */}
         {!isAboveMediumScreens && isMenuToggled && (
-            <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-gray-300 drop-shadow-xl">
+            <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-black drop-shadow-xl">
                 {/* Close Icon */}
                 <div className="flex justify-end p-12">
                     <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                        <XMarkIcon className="h-6 w-6 text-gray-400" />
+                        <XMarkIcon className="h-6 w-6 text-white" />
                     </button>
                 </div>
 

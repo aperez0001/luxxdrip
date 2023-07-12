@@ -5,12 +5,14 @@ import OurProducts from "@/scenes/ourProducts"
 import ContactUs from "@/scenes/contactUs"
 import MailchimpForm from "./scenes/signUp"
 
+
 import Featured from "@/scenes/featured"
 import { useEffect, useState } from "react"
 import { SelectedPage } from "@/shared/types"
 import ComingSoon from "./scenes/temp"
 import Footer from "@/scenes/footer"
 import MailChimp from "./shared/MailChimp"
+import IntakeQWidget from "./shared/IntakeQWidget"
 
 
 
@@ -37,17 +39,19 @@ function App() {
   return (
     <div className="app bg-gray-20">
       {/* <MailChimp /> */}
-      <Navbar 
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage} 
-        setSelectedPage={setSelectedPage}
-      />
       
-      <Home setSelectedPage = {setSelectedPage} />
-      <Benefits setSelectedPage = {setSelectedPage} />
-      <OurProducts setSelectedPage = {setSelectedPage} />
-      <MailchimpForm setSelectedPage = {setSelectedPage} />
-      <Footer />
+        <Navbar 
+          isTopOfPage={isTopOfPage}
+          selectedPage={selectedPage} 
+          setSelectedPage={setSelectedPage}
+        />
+        <Home setSelectedPage = {setSelectedPage} />
+        <Benefits setSelectedPage = {setSelectedPage} />
+        <OurProducts setSelectedPage = {setSelectedPage} />
+        <MailchimpForm setSelectedPage = {setSelectedPage} />
+        {/* <IntakeQWidget /> */}
+        <Footer />
+      
       
       {/* <ComingSoon setSelectedPage = {setSelectedPage} /> */}
     </div>
