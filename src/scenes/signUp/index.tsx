@@ -48,12 +48,12 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
   };
 
     return (
-    <section
-        id="joinnow"
-        className='mx-auto min-h-full w-5/6 pt-32'
-    >
+    
+    <section 
+        className="mx-auto min-h-full w-5/6 py-32"
+        id="joinnow">
+        
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.JoinNow)}>
-            {/* HEADER */}
             <motion.div
                 className=''
                 initial="hidden"
@@ -65,6 +65,7 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                     visible: { opacity: 1, x: 0 }
                 }}
             >
+                <hr className='h-1 mb-12 bg-gray-200 border-0 dark:bg-gray-700'/>
                 <HText>
                     <span className='text-secondary-300'>
                         JOIN NOW 
@@ -101,114 +102,103 @@ const MailchimpForm = ({ setSelectedPage }: Props) => {
                 ) : (
                     <p>Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.</p>
                 )}
-                
-
-    
-                
             </motion.div>
 
             {/* FORM */}
-            <div className=' justify-between gap-8 md:flex'>
-                <motion.div
-                    className='basis-3/5 md:mt-0'
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5 }}
-                    variants={{
-                        hidden: { opacity: 0, y: 50},
-                        visible: { opacity: 1, x: 0 }
-                    }}
-                >
-                    
-                    <form
-                                action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
-                                method="post"
-                                target="_blank"
-                                // might need onSubmit here
-                    >
-                        <input
-                            className={inputStyles}
-                            type="text"
-                            name="FNAME"
-                            id="mce-FNAME"
-                            placeholder='First Name'
-                            value={firstName} 
-                            onChange={handleFirstNameChange}
-                            required
-                            // {...register("firstName", {
-                            //     required: true,
-                            //     maxLength: 100,
-                            // })}
-                        />
-                        
-                        {errors.firstName && (
-                            <p className='mt-1 text-secondary-300'>
-                                {errors.firstName.type === "required" && "This field is required."}
-                                {errors.firstName.type === "maxLength" && "Max length is 100 characters."}
-                            </p>
-                        )}
-
-                        <input
-                            className={inputStyles}
-                            type="text"
-                            name="LNAME"
-                            id="mce-LNAME"
-                            placeholder='Last Name'
-                            value={lastName}
-                            onChange={handleLastNameChange}
-                            required
-                            // {...register("lastName", {
-                            //     required: true,
-                            //     maxLength: 100,
-                            // })}
-                        />
-                        
-                        {errors.lastName && (
-                            <p className='mt-1 text-secondary-300'>
-                                {errors.lastName.type === "required" && "This field is required."}
-                                {errors.lastName.type === "maxLength" && "Max length is 100 characters."}
-                            </p>
-                        )}
-
-                        <input
-                            className={inputStyles}
-                            type="text"
-                            name="EMAIL"
-                            id="mce-EMAIL"
-                            placeholder='EMAIL'
-                            value={email} 
-                            onChange={handleEmailChange}
-                            required
-                            // {...register("email", {
-                            //     required: true,
-                            //     pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-                            // })}
-                        />
-                        {errors.email && (
-                            <p className='mt-1 text-secondary-300'>
-                                {errors.email.type === "required" && "This field is required."}
-                                {errors.email.type === "pattern" && "Invalid email address."}
-                            </p>
-                        )}
-
-                        <button
-                            type="submit"
-                            name='subscribe'
-                            value="Subscribe"
-                            className='mt-5 rounded-md bg-secondary-300 px-10 py-2 hover:bg-primary-500 hover:text-white'
+            <motion.div 
+                className="flex flex-col items-center justify-center px-6  mx-auto pb-32 lg:py-0"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
+                variants={{
+                    hidden: { opacity: 0, y: 50},
+                    visible: { opacity: 1, x: 0 }
+                }}
+            >
+                <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Join Now
+                        </h1>
+                        <form 
+                            className="space-y-4 md:space-y-6"
+                            action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
+                            method="post"
+                            target="_blank"
                         >
-                            SUBMIT
-                        </button>
-
-
-                    </form>
-                    
-                    
-                </motion.div>
-            </div>
+                            <div>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input 
+                                    type="email" 
+                                    name="EMAIL" 
+                                    id="mce-EMAIL"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                    placeholder="name@company.com" 
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                                <input 
+                                    type="name" 
+                                    name="FNAME" 
+                                    id="mce-FNAME" 
+                                    placeholder="First Name" 
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                    value={firstName}
+                                    onChange={handleFirstNameChange}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="lastName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                                <input 
+                                    type="name" 
+                                    name="LNAME" 
+                                    id="mce-LNAME" 
+                                    placeholder="••••••••" 
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value={lastName}
+                                    onChange={handleLastNameChange}
+                                    required
+                                />
+                            </div>
+                            {/* <div className="flex items-start">
+                                <div className="flex items-center h-5">
+                                    <input 
+                                        id="terms" 
+                                        aria-describedby="terms" 
+                                        type="checkbox" 
+                                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                                        required
+                                    />
+                                </div>
+                                <div className="ml-3 text-sm">
+                                    <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">I accept the 
+                                        <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">
+                                            Terms and Conditions
+                                        </a>
+                                    </label>
+                                </div>
+                            </div> */}
+                            <button 
+                                type="submit" 
+                                name="subscribe"
+                                value="Subscribe"
+                                className="w-full bg-secondary-500 hover:bg-secondary-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                    Join Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </motion.div>
         </motion.div>
     </section>
+
+    
   )
 }
 

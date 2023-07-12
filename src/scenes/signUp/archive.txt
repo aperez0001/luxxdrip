@@ -1,0 +1,161 @@
+{/* <section
+        id="joinnow"
+        className='mx-auto min-h-full w-5/6 pt-32'
+    >
+        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.JoinNow)}>
+            {/* HEADER */}
+            <motion.div
+                className=''
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
+                variants={{
+                    hidden: { opacity: 0, x:-50},
+                    visible: { opacity: 1, x: 0 }
+                }}
+            >
+                <HText>
+                    <span className='text-secondary-300'>
+                        JOIN NOW 
+                    </span> TO GET YOUR BODY HEALTHY
+                </HText>
+                <p className='py-5'>
+                Join Our Email List Now for Exclusive Benefits and Wellness Insights!
+
+                Ready to embark on a journey towards enhanced well-being? Join our email list today and gain access to exclusive benefits, special promotions, and valuable insights to support your wellness goals.
+                </p>
+                
+                {isAboveMediumScreens ? (
+                <p>By becoming a part of our email community, you'll receive: 
+                <ul className='py-5 space-y-1 list-inside'>
+                <li className="flex items-start">
+                    <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Exclusive Promotions: Be the first to know about our limited-time offers, seasonal discounts, and special deals on our premium IV therapy treatments. Save money while prioritizing your health and enjoying the luxurious experience of Luxx Drip Therapy.
+                </li>
+                <li className="flex items-start">
+                    <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Wellness Tips and Insights: Stay informed with our expertly curated content. Receive wellness tips, nutritional guidance, and the latest insights on how to optimize your well-being. Discover new approaches to self-care and learn about the benefits of IV therapy in achieving a healthier, more vibrant life.
+                </li>
+                <li className="flex items-start">
+                    <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Giveaways and Contests: Participate in exciting giveaways and contests exclusive to our email subscribers. Get a chance to win complimentary IV therapy sessions, luxury wellness packages, and other amazing prizes designed to uplift your mind, body, and spirit.
+                </li>
+                <li className="flex items-start">
+                    <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Events and News: Stay in the loop with Luxx Drip Therapy events, workshops, and community initiatives. Be the first to hear about new treatment offerings, additions to our team, and other exciting updates happening in our luxurious wellness space.
+                </li>
+                </ul>
+                    Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.
+                </p>
+                ) : (
+                    <p>Sign up today to start receiving the benefits and knowledge that Luxx Drip Therapy has to offer.</p>
+                )}
+                
+
+    
+                
+            </motion.div>
+
+            {/* FORM */}
+            <div className='justify-between gap-8 md:flex'>
+                <motion.div
+                    className='basis-3/5 md:mt-0'
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 50},
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                >
+                    
+                    <form
+                                action="https://luxxdrip.us21.list-manage.com/subscribe/post?u=e01919a7baafa2016354fe5f6&amp;id=44d003f703&amp;f_id=00a725e7f0"
+                                method="post"
+                                target="_blank"
+                                // might need onSubmit here
+                    >
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="FNAME"
+                            id="mce-FNAME"
+                            placeholder='First Name'
+                            value={firstName} 
+                            onChange={handleFirstNameChange}
+                            required
+                            // {...register("firstName", {
+                            //     required: true,
+                            //     maxLength: 100,
+                            // })}
+                        />
+                        
+                        {errors.firstName && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.firstName.type === "required" && "This field is required."}
+                                {errors.firstName.type === "maxLength" && "Max length is 100 characters."}
+                            </p>
+                        )}
+
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="LNAME"
+                            id="mce-LNAME"
+                            placeholder='Last Name'
+                            value={lastName}
+                            onChange={handleLastNameChange}
+                            required
+                            // {...register("lastName", {
+                            //     required: true,
+                            //     maxLength: 100,
+                            // })}
+                        />
+                        
+                        {errors.lastName && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.lastName.type === "required" && "This field is required."}
+                                {errors.lastName.type === "maxLength" && "Max length is 100 characters."}
+                            </p>
+                        )}
+
+                        <input
+                            className={inputStyles}
+                            type="text"
+                            name="EMAIL"
+                            id="mce-EMAIL"
+                            placeholder='EMAIL'
+                            value={email} 
+                            onChange={handleEmailChange}
+                            required
+                            // {...register("email", {
+                            //     required: true,
+                            //     pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                            // })}
+                        />
+                        {errors.email && (
+                            <p className='mt-1 text-secondary-300'>
+                                {errors.email.type === "required" && "This field is required."}
+                                {errors.email.type === "pattern" && "Invalid email address."}
+                            </p>
+                        )}
+
+                        <button
+                            type="submit"
+                            name='subscribe'
+                            value="Subscribe"
+                            className='mt-5 rounded-md bg-secondary-300 px-10 py-2 hover:bg-primary-500 hover:text-white'
+                        >
+                            SUBMIT
+                        </button>
+
+
+                    </form>
+                    
+                    
+                </motion.div>
+            </div>
+        </motion.div>
+    </section> */}
